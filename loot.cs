@@ -1,15 +1,15 @@
-namespace Block {
+namespace Loot {
     using Item;
     using System;
     using Board;
-    class block: Item.item {
+    class loot: Item.item {
         int boardHeight;
         int boardWidth;
         Board.board board;
-        public block(int entered_x, int entered_y, Board.board entered_board) {
+        public loot(int entered_x, int entered_y, Board.board entered_board) {
             x = entered_x;
             y = entered_y;
-            symbol = 1;
+            symbol = 4;
             board = entered_board;
             if (board.validPosition(x,y)) {
                 Console.WriteLine("Valid");

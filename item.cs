@@ -7,7 +7,7 @@ namespace Item{
         public bool pushable { get; set; }
         public ConsoleColor forgroundColour = ConsoleColor.Red;
         public ConsoleColor backgroundColour = ConsoleColor.Black;
-        public string symbol = "x";
+        public int symbol = 1;
         public item(){}
         public void draw () {
             Console.BackgroundColor = backgroundColour;

@@ -9,10 +9,11 @@ namespace Player {
         public player(int entered_x, int entered_y, Board.board entered_board) {
             x = entered_x;
             y = entered_y;
+            symbol = 2;
             board = entered_board;
             if (board.validPosition(x,y)) {
                 Console.WriteLine("Valid");
-                board.addItem(x,y);
+                board.addItem(x,y, symbol);
             } else {
                 Console.WriteLine("Invalid Postion");
             }
@@ -20,11 +21,13 @@ namespace Player {
             boardWidth = board.width;
             boardHeight = board.height;
         }
+
+        
         public void moveLeft() {
             if (board.validPosition(x-1,y)) {
                 board.removeItem(x,y);
                 x--;
-                board.addItem(x,y);
+                board.addItem(x,y, symbol);
                 
                 board.showBoard();
             }
@@ -33,7 +36,7 @@ namespace Player {
             if (board.validPosition(x+1,y)) {
                 board.removeItem(x,y);
                 x++;
-                board.addItem(x,y);
+                board.addItem(x,y, symbol);
                 
                 board.showBoard();
             }
@@ -42,7 +45,7 @@ namespace Player {
             if (board.validPosition(x,y-1)) {
                 board.removeItem(x,y);
                 y--;
-                board.addItem(x,y);
+                board.addItem(x,y, symbol);
                 
                 board.showBoard();
             }
@@ -51,7 +54,7 @@ namespace Player {
             if (board.validPosition(x,y+1)) {
                 board.removeItem(x,y);
                 y++;
-                board.addItem(x,y);
+                board.addItem(x,y, symbol);
                 
                 board.showBoard();
             }

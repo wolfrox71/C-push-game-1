@@ -46,9 +46,13 @@ namespace Board {
 
         public void move(int original_x, int original_y, int new_x, int new_y, int symbol) {
             int type = positions[original_x,original_y];
+            Console.WriteLine(type);
             Console.WriteLine(removeItem(original_x, original_y));
+            //Console.WriteLine(addItem(original_x, original_y, 5));
             Console.WriteLine(addItem(new_x, new_y, symbol));
-           }
+            System.Threading.Thread.Sleep(Convert.ToInt32(1 * 1000)); // sleep for 1 sec
+
+        }
 
 
         public void showBoard() {

@@ -12,8 +12,9 @@ class Program {
         var block2 = new Block.block(3,4, board);
         var block3 = new Block.block(3,2, board);
         var player1 = new Player.player(1,1, board);
-        var loot = new Loot.loot(5,4, board);
+        var loot = new Loot.loot(2,4, board);
         var goal = new Goal.goal(5,5, board);
+        
         Game.game game = new Game.game(board, player1);
         //board.showBoard();
         game.play();

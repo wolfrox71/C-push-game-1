@@ -32,7 +32,7 @@ namespace Player {
             }
             else {
                 if (board.validPosition(x-2, y) && board.pushable(x-1, y)) {
-                    board.move(x-1, y, x-2, y,1);
+                    board.move(x-1, y, x-2, y,4);
                     board.move(x,y, x-1, y, symbol);
                     x--;
                 }
@@ -47,7 +47,7 @@ namespace Player {
             }
             else {
                 if (board.validPosition(x+2, y) && board.pushable(x+1, y)) {
-                    board.move(x+1, y, x+2, y,1);
+                    board.move(x+1, y, x+2, y,4);
                     board.move(x,y, x+1, y, symbol);
                     x++;
                 }
@@ -62,7 +62,7 @@ namespace Player {
             }
             else {
                 if (board.validPosition(x, y-2) && board.pushable(x, y-1)) {
-                    board.move(x, y-1, x, y-2,1);
+                    board.move(x, y-1, x, y-2,4);
                     board.move(x,y, x, y-1, symbol);
                     y--;
                 }
@@ -77,8 +77,8 @@ namespace Player {
             }
             else {
                 if (board.validPosition(x, y+2) && board.pushable(x, y+1)) {
-                    board.move(x, y+1, x, y+2,1);
-                     board.move(x,y, x, y+1, symbol);
+                    board.move(x, y+1, x, y+2,4);
+                    board.move(x,y, x, y+1, symbol);
                     y++;
                 }
             }

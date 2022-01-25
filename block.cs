@@ -17,7 +17,7 @@ namespace Block {
             } else {
                 Console.WriteLine("Invalid Postion");
             }
-            pushable = false;
+            pushable = true;
             boardWidth = board.width;
             boardHeight = board.height;
         }

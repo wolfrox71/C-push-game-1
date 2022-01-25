@@ -25,38 +25,62 @@ namespace Player {
         
         public void moveLeft() {
             if (board.validPosition(x-1,y)) {
-                board.removeItem(x,y);
+                board.move(x,y, x-1, y, symbol);
                 x--;
-                board.addItem(x,y, symbol);
                 
                 board.showBoard();
+            }
+            else {
+                if (board.validPosition(x-2, y) && board.pushable(x-1, y)) {
+                    board.move(x-1, y, x-2, y,1);
+                    board.move(x,y, x-1, y, symbol);
+                    x--;
+                }
             }
         }
         public void moveRight() {
             if (board.validPosition(x+1,y)) {
-                board.removeItem(x,y);
+                board.move(x,y, x+1, y, symbol);
                 x++;
-                board.addItem(x,y, symbol);
                 
                 board.showBoard();
+            }
+            else {
+                if (board.validPosition(x+2, y) && board.pushable(x+1, y)) {
+                    board.move(x+1, y, x+2, y,1);
+                    board.move(x,y, x+1, y, symbol);
+                    x++;
+                }
             }
         }
         public void moveUp() {
             if (board.validPosition(x,y-1)) {
-                board.removeItem(x,y);
+                board.move(x,y, x, y-1, symbol);
                 y--;
-                board.addItem(x,y, symbol);
                 
                 board.showBoard();
+            }
+            else {
+                if (board.validPosition(x, y-2) && board.pushable(x, y-1)) {
+                    board.move(x, y-1, x, y-2,1);
+                    board.move(x,y, x, y-1, symbol);
+                    y--;
+                }
             }
         }
         public void moveDown() {
             if (board.validPosition(x,y+1)) {
-                board.removeItem(x,y);
+                board.move(x,y, x, y+1, symbol);
                 y++;
-                board.addItem(x,y, symbol);
                 
                 board.showBoard();
+            }
+            else {
+                if (board.validPosition(x, y+2) && board.pushable(x, y+1)) {
+                    board.move(x, y+1, x, y+2,1);
+                     board.move(x,y, x, y+1, symbol);
+                    y++;
+                }
             }
         }
     }

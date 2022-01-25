@@ -18,6 +18,16 @@ namespace Board {
             }
             return ((positions[y,x] == 0));
         }
+        public bool pushable(int x, int y) {
+            switch (positions[y,x]) {
+                case 0: case 4: case 2:  //yes
+                    return true;
+                case 3: case 1: //no
+                    return false;
+                default:
+                    return false;
+            } 
+        }
 
         public bool addItem(int x, int y, int value){
             if (validPosition(x,y)) {
@@ -33,6 +43,12 @@ namespace Board {
             }
             return false;
         }
+
+        public void move(int original_x, int original_y, int new_x, int new_y, int symbol) {
+            int type = positions[original_x,original_y];
+            Console.WriteLine(removeItem(original_x, original_y));
+            Console.WriteLine(addItem(new_x, new_y, symbol));
+           }
 
 
         public void showBoard() {
@@ -67,6 +83,7 @@ namespace Board {
                         default:
                             break;
                     }
+
                     Console.Write(positions[x,y]);
                     if (y!= positions.GetLength(1)-1) {
                         Console.Write("|");
